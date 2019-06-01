@@ -14,17 +14,27 @@ class EquationWindow(QtWidgets.QWidget):
     def init_ui(self):
 
         self.eqn_box = QtWidgets.QLineEdit() # Equation Entry Box
+        self.min_x_box = QtWidgets.QLineEdit()
+        self.max_x_box = QtWidgets.QLineEdit()
         self.eqn_start = QtWidgets.QLabel("y =")
         self.plot_butt = QtWidgets.QPushButton("Plot Equation") # Button to plot equation
+        self.x_range = QtWidgets.QLabel("< x <")
 
         # Create Layout
         vertical_layout = QtWidgets.QVBoxLayout()
-        horizontal_layout = QtWidgets.QHBoxLayout()
+        eqbox_layout = QtWidgets.QHBoxLayout()
+        x_range_layout = QtWidgets.QHBoxLayout()
 
-        horizontal_layout.addWidget(self.eqn_start)
-        horizontal_layout.addWidget(self.eqn_box)
 
-        vertical_layout.addLayout(horizontal_layout)
+        eqbox_layout.addWidget(self.eqn_start)
+        eqbox_layout.addWidget(self.eqn_box)
+
+        x_range_layout.addWidget(self.min_x_box)
+        x_range_layout.addWidget(self.x_range)
+        x_range_layout.addWidget(self.max_x_box)
+
+        vertical_layout.addLayout(eqbox_layout)
+        vertical_layout.addLayout(x_range_layout)
         vertical_layout.addWidget(self.plot_butt)
 
         self.setLayout(vertical_layout)
