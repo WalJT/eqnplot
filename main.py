@@ -3,6 +3,7 @@
 import sys
 from PyQt5 import QtWidgets
 import matplotlib.pyplot as plt
+import numpy as np
 
 class EquationWindow(QtWidgets.QWidget):
 
@@ -35,7 +36,10 @@ class EquationWindow(QtWidgets.QWidget):
 
     def plot_equation(self):
         eqn = self.eqn_box.text()
-        print(eqn)
+        x = np.linspace(-10, 10, 300)
+        y = eval(eqn)
+        plt.plot(x, y)
+        plt.show()
 
 
 app = QtWidgets.QApplication(sys.argv)
