@@ -13,17 +13,29 @@ class EquationWindow(QtWidgets.QWidget):
     def init_ui(self):
 
         self.eqn_box = QtWidgets.QLineEdit() # Equation Entry Box
+        self.eqn_start = QtWidgets.QLabel("y =")
         self.plot_butt = QtWidgets.QPushButton("Plot Equation") # Button to plot equation
 
         # Create Layout
         vertical_layout = QtWidgets.QVBoxLayout()
-        vertical_layout.addWidget(self.eqn_box)
+        horizontal_layout = QtWidgets.QHBoxLayout()
+
+        horizontal_layout.addWidget(self.eqn_start)
+        horizontal_layout.addWidget(self.eqn_box)
+
+        vertical_layout.addLayout(horizontal_layout)
         vertical_layout.addWidget(self.plot_butt)
 
         self.setLayout(vertical_layout)
         self.setWindowTitle("Equation Window")
 
+        self.plot_butt.clicked.connect(self.plot_equation)
+
         self.show()
+
+    def plot_equation(self):
+        eqn = self.eqn_box.text()
+        print(eqn)
 
 
 app = QtWidgets.QApplication(sys.argv)
