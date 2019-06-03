@@ -48,7 +48,11 @@ class EquationWindow(QtWidgets.QWidget):
         x = np.linspace(float(self.min_x_box.text()), float(self.max_x_box.text()), 300)
         eqn = self.eqn_box.text()
         y = eval(eqn)
+
         plt.plot(x, y)
+        plt.title("y = " + eqn)
+        plt.xlabel("x")
+        plt.ylabel("y")
         plt.show()
 
 
