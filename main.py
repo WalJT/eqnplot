@@ -3,7 +3,7 @@
 import sys
 from PyQt5 import QtWidgets
 import matplotlib.pyplot as plt
-import numpy as np
+from numpy import *
 
 class EquationWindow(QtWidgets.QWidget):
 
@@ -45,7 +45,7 @@ class EquationWindow(QtWidgets.QWidget):
         self.show()
 
     def plot_equation(self):
-        x = np.linspace(float(self.min_x_box.text()), float(self.max_x_box.text()), 300)
+        x = linspace(float(self.min_x_box.text()), float(self.max_x_box.text()), 300)
         eqn = self.eqn_box.text()
         y = eval(eqn)
 
