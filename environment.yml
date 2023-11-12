@@ -6,4 +6,3 @@ dependencies:
   - matplotlib
   - pip:
       - nicegui
-prefix: /home/jules/miniconda3/envs/eqnplot
