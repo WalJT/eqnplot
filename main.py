@@ -53,6 +53,7 @@ class EquationWindow(QtWidgets.QWidget):
         plt.title("y = " + eqn)
         plt.xlabel("x")
         plt.ylabel("y")
+        plt.xkcd()
         plt.show()
 
 
