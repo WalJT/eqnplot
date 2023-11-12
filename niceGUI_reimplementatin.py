@@ -12,4 +12,13 @@ with ui.column():
         ui.label("< x <")
         ui.input("upper x")
 
+# Pacehoder column with sample plot
+# Example taken from (https://nicegui.io/documentation/pyplot)
+with ui.column():
+    with ui.pyplot(figsize=(3, 2)):
+        x = np.linspace(0.0, 5.0)
+        y = np.cos(2 * np.pi * x) * np.exp(-x)
+        plt.plot(x, y, '-')
+    
+
 ui.run(title="eqnPlot")
