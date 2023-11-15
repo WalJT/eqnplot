@@ -5,7 +5,7 @@ import numpy as np
 def plot_graph() -> None:
     with ui.column():
         with ui.pyplot(figsize=(8, 5)):
-            x = np.linspace(lower_x_input.value, upper_x_input.value)
+            x = np.linspace(float(lower_x_input.value), float(upper_x_input.value))
             y = eval(eqn_input.value)
             plt.plot(x, y, 'k-',)
 
