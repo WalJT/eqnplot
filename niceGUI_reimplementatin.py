@@ -19,6 +19,5 @@ with ui.column():
         upper_x_input = ui.input(label="Upper x limit:", placeholder="  10")
     ui.button("Plot", on_click=plot_graph)
 
-
 # Run the app
 ui.run(title="eqnPlot")
