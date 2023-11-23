@@ -2,7 +2,7 @@ name: eqnplot
 channels:
   - defaults
 dependencies:
-  - python==3.11
+  - python >=3.11,<3.12
   - matplotlib
   - pip
   - pip:
