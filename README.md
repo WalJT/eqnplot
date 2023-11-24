@@ -2,7 +2,7 @@
 
 ## TODO for re-implementation
 
-- [ ] Clear plot when drawing a new one
+- [x] Clear plot when drawing a new one
 - [x] Gracefully handle scenario where no equation and/or parameters are given
 
 Python / Qt5 app for plotting equations. Uses numpy and matplotlib on the backend.
