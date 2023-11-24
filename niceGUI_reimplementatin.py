@@ -10,7 +10,7 @@ def plot_graph() -> None:
                 y = eval(eqn_input.value)
                 plt.plot(x, y, 'k-',)
     except:
-        ui.notify("There was an error")
+        ui.notify("Error: Missing or invalid equation or parameters")
 
 # Two rows containg equation and linmits for X axis
 with ui.column():
