@@ -3,13 +3,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def plot_graph() -> None:
+    plot_container.clear()
     try:
         # https://nicegui.io/documentation/section_page_layout#clear_containers
         # ^^^ Need to implement that here to clear exiting plots
-        with ui.pyplot(figsize=(8, 5)):
-            x = np.linspace(float(lower_x_input.value), float(upper_x_input.value))
-            y = eval(eqn_input.value)
-            plt.plot(x, y, 'k-',)
+        with plot_container:
+            with ui.pyplot(figsize=(8, 5)):
+                x = np.linspace(float(lower_x_input.value), float(upper_x_input.value))
+                y = eval(eqn_input.value)
+                plt.plot(x, y, 'k-',)
     except:
         ui.notify("Error: Missing or invalid equation or parameters")
 
@@ -23,6 +25,8 @@ with ui.column():
         ui.label("< x <")
         upper_x_input = ui.input(label="Upper x limit:", placeholder="<a number>")
     ui.button("Plot", on_click=plot_graph)
+
+plot_container = ui.card()
 
 # Run the app
 ui.run(title="eqnPlot")
