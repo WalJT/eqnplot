@@ -4,6 +4,8 @@ import numpy as np
 
 def plot_graph() -> None:
     try:
+        # https://nicegui.io/documentation/section_page_layout#clear_containers
+        # ^^^ Need to implement that here to clear exiting plots
         with ui.pyplot(figsize=(8, 5)):
             x = np.linspace(float(lower_x_input.value), float(upper_x_input.value))
             y = eval(eqn_input.value)
